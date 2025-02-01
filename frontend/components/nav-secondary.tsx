@@ -51,7 +51,7 @@ export function NavSecondary({
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
                 {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-                <span>Theme toggle</span>
+                <span>Theme toggle </span>
               </button>
             </SidebarMenuButton>
           </SidebarMenuItem>

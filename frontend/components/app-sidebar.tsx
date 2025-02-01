@@ -4,10 +4,9 @@ import * as React from "react";
 import {
   BookOpen,
   Bot,
-  Frame,
   LifeBuoy,
-  Moon,
-  Map,
+  UtensilsCrossed,
+  Dumbbell,
   PieChart,
   Send,
   Settings2,
@@ -15,10 +14,9 @@ import {
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
+import { NavDailyPlan } from "@/components/nav-projects";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
-import { DatePicker } from "./date-picker";
 import {
   Sidebar,
   SidebarContent,
@@ -137,21 +135,16 @@ const data = {
       icon: Send,
     },
   ],
-  projects: [
+  dailyPlan: [
     {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
+      name: "Daily meals",
+      url: "/dashboard/daily-meals",
+      icon: UtensilsCrossed,
     },
     {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
+      name: "Daily workouts",
+      url: "/dashboard/daily-workouts",
+      icon: Dumbbell,
     },
   ],
 };
@@ -164,12 +157,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg text-sidebar-primary-foreground">
                   <Image alt="ryse" src={ryse} className="size-7" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Ryse</span>
-                  <span className="truncate text-xs">App</span>
+                  <span className="truncate font-bebas text-xl">Ryse</span>
                 </div>
               </a>
             </SidebarMenuButton>
@@ -177,10 +169,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <DatePicker />
         <SidebarSeparator className="mx-0" />
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavDailyPlan dailyPlan={data.dailyPlan} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>

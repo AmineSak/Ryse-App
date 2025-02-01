@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +13,7 @@ h2 {
 
 @layer base {
   :root {
+    --font-bebas: "Bebas Neue", sans-serif;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -90,4 +92,7 @@ h2 {
   body {
     @apply bg-background text-foreground;
   }
+}
+.font-bebas {
+  font-family: var(--font-bebas);
 }
